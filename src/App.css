@@ -230,3 +230,10 @@ main {
   flex-basis: calc(100%/7);
   width: calc(100%/7);
 }
+
+.call-event-inserted {
+  width:5px;
+  height:5px;
+  background-color:red;
+  border-radius: 50%;
+}

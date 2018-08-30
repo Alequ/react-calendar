@@ -44,6 +44,8 @@ class Calendar extends React.Component {
     return <div className="days row">{days}</div>;
   }
 
+ 
+
   renderCells() {
     const { currentMonth, selectedDate } = this.state;
     const monthStart = dateFns.startOfMonth(currentMonth);
@@ -70,10 +72,15 @@ class Calendar extends React.Component {
                 : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
             }`}
             key={day}
-            onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
+            onClick={() => {this.onDateClick(dateFns.parse(cloneDay)); this.renderTodoList()}                
+            } 
           >
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
+
+            
+            
+            {/* <div className="call-event-inserted"></div> */}
           </div>
         );
         day = dateFns.addDays(day, 1);
@@ -87,6 +94,10 @@ class Calendar extends React.Component {
     }
     return <div className="body">{rows}</div>;
   }
+
+  renderTodoList() {
+    console.log(this)
+}
 
   onDateClick = day => {
     this.setState({

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Calendar from "./components/Calendar";
+import ToDoList from "./components/ToDoList";
 
 import './App.css';
 
@@ -18,6 +19,7 @@ class App extends React.Component {
         </header>
         <main>
           <Calendar />
+          <ToDoList />
         </main>
       </div>
     );
